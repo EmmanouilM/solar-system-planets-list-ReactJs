@@ -1,11 +1,9 @@
 import React from 'react'
+import '../styles/_card.scss'
 
-const Card = ({planet}) => {
+const Card = props => {
   return (
-    <div>
-    <h2>{planet.name}</h2>
-  
-    </div>
+    <div className="card">{props.children}</div>
   )
 }
 

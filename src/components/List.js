@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import planetsJSON from "../assets/data.json";
-import Card from "../UI/Card";
+import Planet from "./Planet";
 
 class List extends Component {
   constructor() {
@@ -22,6 +22,16 @@ class List extends Component {
 
   render() {
     const { data, loading } = this.state;
+    const planetsList = data.map((planet) => (
+      <Planet
+        key={planet.position}
+        name={planet.name}
+        image={planet.image}
+        velocity={planet.velocity}
+        description={planet.description}
+        distance={planet.distance}
+      />
+    ));
 
     if (loading) {
       return <div>Loading...</div>;
@@ -29,11 +39,8 @@ class List extends Component {
 
     return (
       <div>
-        {data.map((planet) => (
-        //  <div key={planet.position}>
-            <Card key={planet.position} planet={planet} />
-        //  </div>
-        ))}
+        <h1>Milky Way Planets </h1>
+        {planetsList}
       </div>
     );
   }
