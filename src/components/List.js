@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import planetsJSON from "../assets/data.json";
 import Planet from "./Planet";
+import "../styles/_list.scss";
 
 class List extends Component {
   constructor() {
@@ -38,9 +39,9 @@ class List extends Component {
     }
 
     return (
-      <div>
+      <div className='container'>
         <h1>Milky Way Planets </h1>
-        {planetsList}
+        <div>{planetsList}</div>
       </div>
     );
   }

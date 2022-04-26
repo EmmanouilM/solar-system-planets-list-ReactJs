@@ -1,0 +1,26 @@
+.content {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  & div {
+    display: flex;
+    flex-direction: column;
+    &:first-of-type {
+      align-items: center;
+    }
+  }
+}
+h2 {
+  margin-top: -1rem;
+}
+.image {
+  max-width: 150px;
+}
+p {
+  & :not(:first-of-type) {
+    margin-top: -0.7rem;
+  }
+}
+.discription {
+  max-width: 40ch;
+}
